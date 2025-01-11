@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrabhjotINSTA</title>
+</head>
+<body>
+    <div class="h1">Instagram login with Selenium (Automation)</div>
+    <div class="h2">By Prabhjot Singh (DTU)</div>
+    <div class="fodiv">
+        <form method="post" action='/?_method=PATCH'>
+            <input name="username" placeholder="Username" class="input">
+            <input name="password" type="password" placeholder="Password" class="input">
+            <button type="submit" style="background-color:#d42e81;
+             padding:2vh; border:none; color: #fff; width:20vh;height: 7.2vh;">login</button>
+        </form></div>
+    <div class="box">
+      <div class="instagram">
+            <span></span>
+     </div>
+   </div>
+    <style>
+        input{
+            margin: 1vh;
+            height: 7vh;
+            padding: 2vh;
+            border: none;
+            background-color: #00000033;
+            width:20vh;
+            font-size: 3vh;
+        }
+        .fodiv{
+            display: flex;
+            justify-content: center;
+            margin: 5vh;
+        }
+      a{
+            text-decoration: none;
+            color:rgb(88, 88, 88);
+            position: relative;
+            top: 130px;
+            font-size: 30px;
+           
+      }
+      .h1{  padding: 3vh;
+            display: flex;
+            justify-content: center;
+            font-size: 4vw;
+      }
+      .h2{
+            padding: 1vh;
+            display: flex;
+            justify-content:center;
+            color: #d42e81;
+            font-size: 2vw;
+            font-weight: 700;
+      }
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.instagram {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 30% 110%,
+            #ffdb8b 0%,
+            #ee653d 25%,
+            #d42e81 50%,
+            #a237b6 75%,
+            #3e57bc 100%);
+    border-radius: 37px;
+    box-shadow: 0px 15px 40px 1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s linear;
+}
+
+.instagram:hover {
+    transform: translateY(-10px);
+}
+
+.instagram::after {
+    content: ';';;
+    position: absolute;
+    top: 23px;
+    right: 22px;
+    border: 7px solid #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+}
+
+.instagram::before {
+    content: ';';;
+    position: absolute;
+    top: 49px;
+    right: 49px;
+    border: 8px solid #fff;
+    height: 43px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+span {
+    position: absolute;
+    display: block;
+    top: 40px;
+    right: 40px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+    </style>
+</body>
+</html>
