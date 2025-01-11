@@ -6,4 +6,5 @@ STEPS TO ENJOY INSTAGRAM LOGIN.
 download the files.
 open terminal
 type npm install 
+type nodemone app.js or node app.js
 enjoy.... :)
