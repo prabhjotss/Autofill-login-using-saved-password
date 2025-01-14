@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 // Render the index.ejs file
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index.ejs');
 });
 app.patch('/unk', async (req, res) => {
     let r = req.body
@@ -29,7 +29,7 @@ app.patch('/unk', async (req, res) => {
         console.error("Error encountered:", error);
         res.status(500).send("An error occurred!");
     }
-    
+    res.render('success.ejs');
 });
 
 app.patch('/', async (req, res) => {
