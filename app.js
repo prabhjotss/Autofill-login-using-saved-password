@@ -13,9 +13,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-const puppeteer = require('puppeteer');
-
 app.patch('/', async (req, res) => {
+    const puppeteer = require('puppeteer');
     const { username, password } = req.body;
 
     try {
