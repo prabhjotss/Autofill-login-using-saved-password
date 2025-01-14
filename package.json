@@ -1,3 +1,6 @@
+"scripts": {
+  "start": "node app.js" // Replace 'app.js' with your main file name
+}
 {
   "name": "webscraping",
   "version": "1.0.0",
