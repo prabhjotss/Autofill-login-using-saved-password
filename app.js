@@ -7,6 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
