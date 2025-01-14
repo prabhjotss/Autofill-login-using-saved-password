@@ -14,10 +14,11 @@ app.get('/', (req, res) => {
 });
 
 app.patch('/', async (req, res) => {
-    const puppeteer = require('puppeteer');
+    
     const { username, password } = req.body;
 
     try {
+        const puppeteer = require('puppeteer');
         const browser = await puppeteer.launch({
             headless: false, // Run in headless mode
             args: ['--no-sandbox', '--disable-setuid-sandbox'] // Necessary for serverless environments
