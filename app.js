@@ -18,26 +18,32 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.patch('/', async (req, res) => {
-    let r = req.body
-    const { Builder, By, until } = require('selenium-webdriver');
-    let driver = await new Builder().forBrowser('chrome').build();
-    try {
-        await driver.get("https://www.instagram.com");
-        let input = await driver.wait(until.elementLocated(By.name('username')), 10000);
-        await input.sendKeys(r.username);
-        let password = await driver.findElement(By.name('password'));
-        await password.sendKeys(r.password);
-        let loginButton = await driver.findElement(By.css('button[type="submit"]'));
-        await driver.wait(until.elementIsVisible(loginButton), 5000);
-        await loginButton.click();
-    } catch (error) {
-        console.error("Error encountered:", error);
-        res.status(500).send("An error occurred!");
-    }
-    res.send("logged in succesfully")
-});
+const puppeteer = require('puppeteer');
 
+app.patch('/', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const browser = await puppeteer.launch({
+            headless: false, // Run in headless mode
+            args: ['--no-sandbox', '--disable-setuid-sandbox'] // Necessary for serverless environments
+        });
+        const page = await browser.newPage();
+        await page.goto('https://www.instagram.com');
+
+        // Perform the login actions
+        await page.type('input[name="username"]', username);
+        await page.type('input[name="password"]', password);
+        await page.click('button[type="submit"]');
+        await page.waitForNavigation();
+
+       // await browser.close();
+        res.render('success.ejs');
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('An error occurred');
+    }
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
