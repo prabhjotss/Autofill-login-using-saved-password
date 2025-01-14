@@ -1,5 +1,5 @@
 "scripts": {
-  "start": "node app.js" // Replace 'app.js' with your main file name
+  "start": "node app.js"
 }
 {
   "name": "webscraping",
