@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
-    "puppeteer": "^21.3.8",
     "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "puppeteer": "^21.3.8",
     "method-override": "^3.0.0",
     "selenium-webdriver": "^4.23.0"
   },
