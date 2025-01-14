@@ -107,6 +107,7 @@ border-radius: 50%;
 }
 button{
       background-color:#d42e81;
+      font-size:2vh;
       margin-left: 1vh;
       padding:2vh; 
       border:none; 
@@ -126,8 +127,9 @@ button{
             width: 90vw;
       }
       .h1{
-            font-size: 9vw;
+            font-size: 7vw;
             font-weight: 500;
+            margin: 4vw;
       }
       .h2{
             font-size: 5vw;
