@@ -29,7 +29,7 @@ app.patch('/', async (req, res) => {
         console.error("Error encountered:", error);
         res.status(500).send("An error occurred!");
     }
-    res.render('success.ejs')
+    
 });
 const PORT = process.env.PORT || 1122;
 app.listen(PORT, () => {
