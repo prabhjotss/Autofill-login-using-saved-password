@@ -12,25 +12,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.render('index');
 });
-app.patch('/unknown', async (req, res) => {
-    let r = req.body
-    const { Builder, By, until, Button } = require('selenium-webdriver');
-    let driver = await new Builder().forBrowser('chrome').build();
-    try {
-        await driver.get("https://www.instagram.com");
-        let input = await driver.wait(until.elementLocated(By.name('username')), 10000);
-        await input.sendKeys(r.username);
-        let password = await driver.findElement(By.name('password'));
-        await password.sendKeys(r.password);
-        let loginButton = await driver.findElement(By.css('button[type="submit"]'));
-        await driver.wait(until.elementIsVisible(loginButton), 5000);
-        await loginButton.click();
-    } catch (error) {
-        console.error("Error encountered:", error);
-        res.status(500).send("An error occurred!");
-    }
-    res.render('success.ejs')
-});
+
 const puppeteer = require('puppeteer');
 
 app.patch('/', async (req, res) => {
