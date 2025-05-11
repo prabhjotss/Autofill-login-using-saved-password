@@ -1,4 +1,4 @@
-# Own-Insta-login-page-selenium
+# Autofill login using saved password 
 🚀 Project Showcase: Custom Instagram Login Page
 
 Excited to share a project I recently worked on! I created a customized login page for Instagram which actually login same as original using a blend of modern web technologies:
